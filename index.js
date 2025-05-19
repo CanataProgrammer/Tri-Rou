@@ -99,5 +99,3 @@ app.get('/api/data', auth, (req, res) => {
   const data = JSON.parse(fs.readFileSync(file));
   res.json(data);
 });
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
