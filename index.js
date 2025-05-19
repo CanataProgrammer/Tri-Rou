@@ -8,6 +8,7 @@ import cors from 'cors';
 const SECRET_KEY = 'your_secret_key'; // 簡易用途向け
 const USERS_FILE = './users.json';
 const DATA_DIR = './data';
+const app = express();
 
 const PORT = process.env.PORT || 3000;
 
