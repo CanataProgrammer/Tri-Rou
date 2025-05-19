@@ -13,7 +13,7 @@ const USERS_FILE = './users.json';
 const DATA_DIR = './data';
 const app = express();
 
-const PORT = process.env.PORT || 36553;
+const PORT = process.env.PORT || 3000;
 
 // publicフォルダを静的ファイルとして提供
 app.use(express.static(path.join(__dirname, 'public')));
