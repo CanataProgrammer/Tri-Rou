@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.editor, .roulette-area {
+  flex: 1;
+  margin: 10px;
+}
+
+.wheels {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100px;
+  height: 40px;
+}
+
+input {
+  display: block;
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}

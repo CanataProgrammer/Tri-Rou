@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triple Roulette</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-section">
+    <h2>ログイン</h2>
+    <input id="login-username" placeholder="ユーザー名" />
+    <input id="login-password" type="password" placeholder="パスワード" />
+    <button onclick="login()">ログイン</button>
+    <button onclick="register()">新規登録</button>
+  </div>
+
+  <div id="app-section" style="display:none;">
+    <h2>Triple Roulette</h2>
+    <button onclick="logout()">ログアウト</button>
+
+    <div class="container">
+      <div class="editor">
+        <h3>ルーレット項目編集</h3>
+        <div id="editors"></div>
+      </div>
+      <div class="roulette-area">
+        <div class="wheels">
+          <select id="wheel1"></select>
+          <select id="wheel2"></select>
+          <select id="wheel3"></select>
+        </div>
+        <button onclick="spinAll()">回す！</button>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
