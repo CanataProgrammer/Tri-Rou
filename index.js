@@ -4,7 +4,10 @@ import path from 'path';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const SECRET_KEY = 'your_secret_key'; // 簡易用途向け
 const USERS_FILE = './users.json';
 const DATA_DIR = './data';
