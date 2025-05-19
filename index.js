@@ -13,9 +13,6 @@ const DATA_DIR = './data';
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const app = express();
-
-const PORT = process.env.PORT || 3000;
 
 // 静的ファイルの提供（index.html, script.js, style.css）
 app.use(express.static(__dirname));
