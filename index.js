@@ -28,11 +28,6 @@ app.get('/', (req, res) => {
 
 // ここにAPIルートなどを追加予定
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
-
 // 他のAPI（ユーザー登録・保存など）はここに追加
 
 // サーバー起動
