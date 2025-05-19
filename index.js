@@ -13,14 +13,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // 静的ファイルの提供
-app.use(express.static(public));
+app.use(express.static('public'));
 
 // JSONボディをパース
 app.use(express.json());
 
 // ルートへのアクセスで index.html を返す
 app.get('/', (req, res) => {
-  res.sendFile(path.join(public 'index.html'));
+  res.sendFile(path.join('public' 'index.html'));
 });
 
 // 今後：ユーザー認証やデータ保存のルートをここに追加する
