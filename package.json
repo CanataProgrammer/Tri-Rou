@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Triple Roulette backend with simple login and data storage",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
