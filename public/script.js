@@ -5,12 +5,7 @@ let wheels = {
   wheel2: ["B1", "B2", "B3"],
   wheel3: ["C1", "C2", "C3"]
 };
-const API_BASE = 'https://tri-rou.onrender.com'; // ←バックエンドのRender URL
-const res = await fetch(`${API_BASE}/api/data`, {
-  headers: {
-    'Authorization': `Bearer ${token}`
-  }
-});
+
 // ロード処理
 window.addEventListener("DOMContentLoaded", () => {
   if (token) {
@@ -89,13 +84,6 @@ async function login() {
     localStorage.setItem("token", token);
     showApp();
     await loadRouletteData();
-    // トークンのテスト用
-    const token = localStorage.getItem('token');
-    const resa = await fetch('/api/data', {
-      headers: {
-        'Authorization': `Bearer ${token}`
-    }
-});
   } else {
     alert("ログイン失敗");
   }
