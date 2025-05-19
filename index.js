@@ -5,16 +5,17 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
 
-const app = express();
-const PORT = process.env.PORT || 3000;
 const SECRET_KEY = 'your_secret_key'; // 簡易用途向け
 const USERS_FILE = './users.json';
 const DATA_DIR = './data';
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const app = express();
 
-// 静的ファイルの提供（index.html, script.js, style.css）
+const PORT = process.env.PORT || 3000;
+
+// 静的ファイルの提供
 app.use(express.static(__dirname));
 
 // JSONボディをパース
@@ -24,6 +25,13 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+// 今後：ユーザー認証やデータ保存のルートをここに追加する
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
 
 // 他のAPI（ユーザー登録・保存など）はここに追加
 
