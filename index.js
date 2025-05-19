@@ -12,18 +12,18 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// 静的ファイルの提供
-app.use(express.static('public'));
+// publicフォルダを静的ファイルとして提供
+app.use(express.static(path.join(__dirname, 'public')));
 
-// JSONボディをパース
+// JSONボディをパース（POSTリクエスト用）
 app.use(express.json());
 
-// ルートへのアクセスで index.html を返す
+// ルートにアクセスがあったら public/index.html を返す
 app.get('/', (req, res) => {
-  res.sendFile(path.join('public' 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// 今後：ユーザー認証やデータ保存のルートをここに追加する
+// ここにAPIルートなどを追加予定
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
