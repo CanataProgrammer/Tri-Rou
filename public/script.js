@@ -1,4 +1,4 @@
-const API_URL = "https://tri-rou.onrender.com";
+const API_URL = "https://tri-rou.onrender.com/";
 let token = localStorage.getItem("token");
 let wheels = {
   wheel1: ["A1", "A2", "A3"],

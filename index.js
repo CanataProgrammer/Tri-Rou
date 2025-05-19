@@ -99,3 +99,17 @@ app.get('/api/data', auth, (req, res) => {
   const data = JSON.parse(fs.readFileSync(file));
   res.json(data);
 });
+
+const token = localStorage.getItem('token');
+const resa = await fetch('/api/data', {
+  headers: {
+    'Authorization': `Bearer ${token}`
+  }
+});
+
+const API_BASE = 'https://tri-rou.onrender.com'; // ←バックエンドのRender URL
+const res = await fetch(`${API_BASE}/api/data`, {
+  headers: {
+    'Authorization': `Bearer ${token}`
+  }
+});
