@@ -95,7 +95,11 @@ app.post('/api/data', auth, (req, res) => {
 // 📥 データ読み込み
 app.get('/api/data', auth, (req, res) => {
   const file = `${DATA_DIR}/${req.user}.json`;
-  if (!fs.existsSync(file)) return res.json({ data: [] });
+  if (!fs.existsSync(file)) {
+    console.log("🟡 データファイルなし、空データを返却");
+    return res.json({ data: { wheel1: [], wheel2: [], wheel3: [] } });
+  }
   const data = JSON.parse(fs.readFileSync(file));
-  res.json(data);
+  console.log("🟢 データ読み込み成功:", data);
+  res.json({ data });
 });
