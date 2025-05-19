@@ -10,6 +10,30 @@ const PORT = process.env.PORT || 3000;
 const SECRET_KEY = 'your_secret_key'; // 簡易用途向け
 const USERS_FILE = './users.json';
 const DATA_DIR = './data';
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+// 静的ファイルの提供（index.html, script.js, style.css）
+app.use(express.static(__dirname));
+
+// JSONボディをパース
+app.use(express.json());
+
+// ルートへのアクセスで index.html を返す
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// 他のAPI（ユーザー登録・保存など）はここに追加
+
+// サーバー起動
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 app.use(cors());
 app.use(express.json());
